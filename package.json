@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "prepare": "husky",
+    "prepare": "npx husky init && echo 'npx lint-staged' > .husky/pre-commit",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
