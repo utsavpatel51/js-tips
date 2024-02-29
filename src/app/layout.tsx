@@ -1,4 +1,6 @@
 import AppHeader from '@/components/common/app-header';
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import type { Metadata } from 'next';
 import { Fira_Code } from 'next/font/google';
 import './globals.css';
@@ -30,6 +32,8 @@ export default function RootLayout({
           <AppHeader />
           <div className='flex-1'>{children}</div>
         </div>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
