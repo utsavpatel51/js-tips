@@ -24,6 +24,8 @@
     --border: 12 6.5% 15.1%;
     --input: 12 6.5% 15.1%;
     --ring: 35.5 91.7% 32.9%;
+
+    --link: rgb(96 165 250);
   }
 }
 
@@ -33,5 +35,12 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+
+  ul,
+  ol {
+    list-style: revert;
+    padding: revert;
+    margin: revert;
   }
 }
