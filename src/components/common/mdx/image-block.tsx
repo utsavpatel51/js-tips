@@ -11,8 +11,8 @@ export default function ImageBlock(props: Props) {
   if (props.variant === 'half')
     return (
       <div className='flex flex-col items-center px-1 py-4 gap-y-2'>
-        <div className='flex flex-row gap-x-4 h-[250px]'>
-          <div className='flex-1  border relative'>
+        <div className='flex flex-col gap-4 h-[450px] md:flex-row md:h-[250px]'>
+          <div className='flex-1 border relative'>
             <Image src={props.src} alt={props.alt} fill={true} />
           </div>
 
@@ -28,7 +28,7 @@ export default function ImageBlock(props: Props) {
 
   return (
     <div className='px-1 py-4'>
-      <div className='w-full h-[450px] border relative'>
+      <div className='w-full h-[250px] border relative md:h-[450px]'>
         <Image src={props.src} alt={props.alt} fill={true} />
       </div>
       {props.caption && (
