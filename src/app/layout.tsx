@@ -14,8 +14,7 @@ export const metadata: Metadata = {
   title: 'JS Tips',
   description:
     'Explore the latest trends, tips, and tutorials in JavaScript and React development. Stay updated with our in-depth articles on best practices, frameworks, and tools.',
-  keywords:
-    'javascript, js, react, blog, nextjs, tips, js tips, javascript tips',
+  keywords: 'javascript, js, react, blog, nextjs',
   robots: 'index, follow',
   applicationName: 'JS Tips',
   generator: 'Next.js',
@@ -31,7 +30,7 @@ export default function RootLayout({
       <body className={firaCode.className}>
         <div className='container flex min-h-screen flex-col lg:px-60'>
           <AppHeader />
-          <div className='flex-1 relative'>{children}</div>
+          <div className='flex-1'>{children}</div>
         </div>
         <Analytics />
         <SpeedInsights />

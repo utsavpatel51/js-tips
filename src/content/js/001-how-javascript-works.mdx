@@ -141,17 +141,4 @@ JS Engine run inside environment, which provide additional features to the scrip
   caption='[Fig 1.3] JS Runtime'
 />
 
-<SubHeading id="example" title="Example">
-Let's understand the working of JS Runtime via example.
-
-<Image variant='fill' src='/_assets/js/001-04.gif' alt="JS Runtime Example GIF" caption={<>[Fig 1.4] JS Runtime Visualize via <Link href="http://latentflip.com/loupe/?code=Cgpjb25zb2xlLmxvZygiRmlyc3QgLT4gU3RhcnQiKQpmdW5jdGlvbiBydW4oKSB7CiAgICBzZXRUaW1lb3V0KGZ1bmN0aW9uICgpewogICAgICAgIGNvbnNvbGUubG9nKCJUaGlyZCIpCiAgICB9LCAwKQogICAgY29uc29sZS5sb2coIlNlY29uZCIpCn0KcnVuKCkKY29uc29sZS5sb2coIkZvdXJ0aCAtPiBFbmQiKQ%3D%3D!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D">loupe</Link></>}/>
-
-1. Once the code starts executing, first the console.log() function will be pushed onto the call stack. Once it's executed, it will be popped out of the stack.
-2. Next, the run() function will be pushed onto the stack and execution will start. setTimeout(), provided by the WebAPI, delays tasks without blocking the main thread. So, the callback function passed to setTimeout will be handled by the WebAPI, and the timer will start running while the main thread continues executing and moves to the next console.log() for execution.
-    - In the example, the time being 0 doesn't mean it will be executed or added to the call stack after that time. What it means is that after x time, it will be added to the queue for further execution.
-3. The run() function will be popped out of the stack, and the last console.log() will be pushed onto the stack for execution.
-4. Now, your synchronous code execution is done, but what about the setTimeout callback? How will it get executed? That's where the event loop comes into the picture. The job of the event loop is to continue monitoring the call stack. Once it's empty, it takes tasks from the queue and puts them back into the call stack for execution.
-    - So, once the last console.log() execution is done and the call stack is empty, the event loop will take the callback from the queue and put it back into the call stack for execution.
-
-</SubHeading>
 </Heading>
