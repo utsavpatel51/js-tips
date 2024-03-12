@@ -1,4 +1,5 @@
 import MDX from '@/components/common/mdx';
+import PageFooter from '@/components/common/page-footer';
 import { getBlog } from '@/lib/blog';
 
 interface Props {
@@ -22,6 +23,7 @@ export default function BlogPage({ params }: Props) {
       <div className='text-justify leading-7 mb-4'>
         <MDX source={data.content} />
       </div>
+      <PageFooter lastUpdated={data.data.lastUpdated} />
     </>
   );
 }

@@ -1,3 +1,4 @@
+import AppFooter from '@/components/common/app-footer';
 import AppHeader from '@/components/common/app-header';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
@@ -27,11 +28,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en'>
+    <html lang='en' className='scroll-smooth scroll-pt-[5rem]'>
       <body className={firaCode.className}>
         <div className='container flex min-h-screen flex-col lg:px-60'>
           <AppHeader />
           <div className='flex-1 relative'>{children}</div>
+          <AppFooter />
         </div>
         <Analytics />
         <SpeedInsights />
