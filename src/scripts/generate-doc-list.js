@@ -4,6 +4,14 @@ const matter = require('gray-matter');
 
 const CONTENT_PATH = path.join(process.cwd(), 'src', 'content');
 
+function getReadableDate(date) {
+  return new Date(date * 1000).toLocaleDateString('en-us', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+}
+
 function generateBlogData() {
   const allBlogs = [];
   const blogByCategories = {};
@@ -21,11 +29,8 @@ function generateBlogData() {
       const blogDetail = {
         title: file.data.title,
         description: file.data.description,
-        date: new Date(file.data.date * 1000).toLocaleDateString('en-us', {
-          year: 'numeric',
-          month: 'long',
-          day: 'numeric',
-        }),
+        date: getReadableDate(file.data.date),
+        lastUpdated: getReadableDate(file.data.lastUpdated),
         epoch: file.data.date,
         slug: file.data.slug,
         category: file.data.category,
