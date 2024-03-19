@@ -17,7 +17,7 @@ module.exports = (plop) => {
     actions: [
       {
         type: 'add',
-        path: 'src/content/{{category}}/{{dashCase filename}}.mdx',
+        path: 'content/posts/{{category}}/{{dashCase filename}}.mdx',
         templateFile: 'src/plop-templates/blog.hbs',
       },
     ],
