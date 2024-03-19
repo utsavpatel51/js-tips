@@ -30,9 +30,9 @@ export default function RootLayout({
   return (
     <html lang='en' className='scroll-smooth scroll-pt-[5rem]'>
       <body className={firaCode.className}>
-        <div className='container flex min-h-screen flex-col lg:px-60'>
+        <div className='md:container md:mx-auto flex min-h-screen flex-col px-4'>
           <AppHeader />
-          <div className='flex-1 relative'>{children}</div>
+          <div className='flex-1 relative py-12'>{children}</div>
           <AppFooter />
         </div>
         <Analytics />

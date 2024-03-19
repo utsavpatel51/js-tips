@@ -44,3 +44,6 @@
     margin: revert;
   }
 }
+
+/* Code Block Rehype Pretty Code */
+@import 'mdx.css'

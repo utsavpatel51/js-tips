@@ -1,18 +1,14 @@
 'use client';
-import useScrollTop from '@/hooks/use-scroll-top';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
 import Link from 'next/link';
 
 export default function AppHeader() {
-  const isScrolled = useScrollTop(50);
-
   return (
-    <header className='sticky top-0 z-header w-full bg-background'>
+    <header className='w-full'>
       <div
         className={cn(
-          'flex h-16 flex-row items-center justify-between gap-x-2 px-2',
-          isScrolled && 'border-b shadow-sm shadow-primary/20'
+          'flex h-16 flex-row items-center justify-between gap-x-2 px-2'
         )}
       >
         <Link href={'/'}>
