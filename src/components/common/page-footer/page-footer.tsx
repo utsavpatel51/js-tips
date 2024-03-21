@@ -4,7 +4,7 @@ import BlogShare from './blog-share';
 export function PageFooter({ lastUpdated }: { lastUpdated: string }) {
   return (
     <div className='flex flex-row h-12 py-16 items-center justify-between'>
-      <div className='text-start h-12'>
+      <div className='text-start h-12 text-muted-foreground'>
         <p className='text-sm'>Last Updated</p>
         <span>{lastUpdated}</span>
       </div>

@@ -33,7 +33,7 @@ export default function RootLayout({
       <body className={firaCode.className}>
         <div className='md:container md:mx-auto flex min-h-screen flex-col px-4'>
           <AppHeader />
-          <div className='flex-1 relative py-12'>{children}</div>
+          <div className='flex-1 relative py-6'>{children}</div>
           <AppFooter />
         </div>
         <Analytics />

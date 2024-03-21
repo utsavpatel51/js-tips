@@ -54,12 +54,10 @@ export default function HomePage(props: Props) {
               <h3 className='text-lg mb-4 max-md:hidden'>Tags</h3>
               <div className='flex flex-row flex-wrap gap-2'>
                 {tags.map((tag) => (
-                  <Link href={`/t/${tag.slug}`} key={tag.slug}>
+                  <Link href={`/${tag.slug}`} key={tag.slug}>
                     <Badge
                       variant={
-                        props.type === 't' && props.slug === tag.slug
-                          ? 'default'
-                          : 'secondary'
+                        props.type === tag.slug ? 'default' : 'secondary'
                       }
                     >
                       {tag.name}
