@@ -67,6 +67,10 @@ code[data-line-numbers-max-digits='3'] > [data-line]::before {
   @apply border-b-2 p-1 shadow-none;
 }
 
+[data-rehype-pretty-code-figure] [data-chars-id='error'] {
+  background: #621d31;
+}
+
 .subheading-anchor {
   @apply no-underline hover:underline;
 }

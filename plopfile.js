@@ -11,13 +11,13 @@ module.exports = (plop) => {
       {
         type: 'list',
         name: 'category',
-        choices: ['js'],
+        choices: ['JavaScript'],
       },
     ],
     actions: [
       {
         type: 'add',
-        path: 'content/posts/{{category}}/{{dashCase filename}}.mdx',
+        path: 'content/posts/{{lowerCase category}}/{{dashCase filename}}.mdx',
         templateFile: 'src/plop-templates/blog.hbs',
       },
     ],

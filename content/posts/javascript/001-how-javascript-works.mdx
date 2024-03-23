@@ -27,7 +27,7 @@ browser but also on any piece of device which have JS Engine. Every browser have
 
 <Image
   variant='half'
-  src='/_assets/js/001-01.png'
+  src='/_assets/javascript/001-01.png'
   alt='JS Engine'
   content={
     <section>
@@ -81,7 +81,7 @@ During execution phase Engine will run JS code line by line and assign value to 
 
 <Image
   variant='half'
-  src='/_assets/js/001-02.png'
+  src='/_assets/javascript/001-02.png'
   alt='V8 Engine'
   content={
     <p>
@@ -115,7 +115,7 @@ JS Engine run inside environment, which provide additional features to the scrip
 
 <Image
   variant='half'
-  src='/_assets/js/001-03.gif'
+  src='/_assets/javascript/001-03.gif'
   alt='JS Runtime'
   content={
     <ol>
@@ -146,7 +146,7 @@ JS Engine run inside environment, which provide additional features to the scrip
 <SubHeading id="example" title="Example">
 Let's understand the working of JS Runtime via example.
 
-<Image variant='fill' src='/_assets/js/001-04.gif' alt="JS Runtime Example GIF" caption={<>[Fig 1.4] JS Runtime Visualize via <Link href="http://latentflip.com/loupe/?code=Cgpjb25zb2xlLmxvZygiRmlyc3QgLT4gU3RhcnQiKQpmdW5jdGlvbiBydW4oKSB7CiAgICBzZXRUaW1lb3V0KGZ1bmN0aW9uICgpewogICAgICAgIGNvbnNvbGUubG9nKCJUaGlyZCIpCiAgICB9LCAwKQogICAgY29uc29sZS5sb2coIlNlY29uZCIpCn0KcnVuKCkKY29uc29sZS5sb2coIkZvdXJ0aCAtPiBFbmQiKQ%3D%3D!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D">loupe</Link></>}/>
+<Image variant='fill' src='/_assets/javascript/001-04.gif' alt="JS Runtime Example GIF" caption={<>[Fig 1.4] JS Runtime Visualize via <Link href="http://latentflip.com/loupe/?code=Cgpjb25zb2xlLmxvZygiRmlyc3QgLT4gU3RhcnQiKQpmdW5jdGlvbiBydW4oKSB7CiAgICBzZXRUaW1lb3V0KGZ1bmN0aW9uICgpewogICAgICAgIGNvbnNvbGUubG9nKCJUaGlyZCIpCiAgICB9LCAwKQogICAgY29uc29sZS5sb2coIlNlY29uZCIpCn0KcnVuKCkKY29uc29sZS5sb2coIkZvdXJ0aCAtPiBFbmQiKQ%3D%3D!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D">loupe</Link></>}/>
 
 1. Once the code starts executing, first the console.log() function will be pushed onto the call stack. Once it's executed, it will be popped out of the stack.
 2. Next, the run() function will be pushed onto the stack and execution will start. setTimeout(), provided by the WebAPI, delays tasks without blocking the main thread. So, the callback function passed to setTimeout will be handled by the WebAPI, and the timer will start running while the main thread continues executing and moves to the next console.log() for execution.

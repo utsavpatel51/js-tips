@@ -1,0 +1,85 @@
+---
+title: Hoisting in JavaScript
+slug: 002-hoisting-in-js
+category: JavaScript
+tags: [JavaScript]
+date: 22 March 2024
+lastUpdated: 22 March 2024
+description: Hoisting refers to process where interpreter move the declaration to the top of the scopes prior to the execution of the code.
+---
+Hoisting refers to a process where the interpreter moves the declaration of variables, functions, classes, and imports to the top of the scopes,
+prior to the execution of the code or at the creation time of <Link href="/javascript/001-how-javascript-works/#creation-phase">Execution Context</Link>. Hoisting allows referencing variables and functions even before their declaration.
+<br/>
+For different types of variables or functions, hoisting behavior will be different. There are different types of hoisting behaviors:
+1. Being able to use the variable's value even before declaration (value hoisting).
+2. Being able to reference the variables in scope before declaration, without throwing any ReferenceError, but the value will be undefined (declaration hoisting).
+3. The declaration of variables causes behavior change in scope before the line in which it is declared.
+
+Function declarations are hoisted with type 1 behavior, var declarations are hoisted with type 2 behavior, and let, const, class declarations are hoisted with type 3 behavior.
+
+<SubHeading id="function-hoisting" title="Function declaraion hoisting">
+  Function defined via function declaration, you can call the function before the function is declared.
+  ```js {1}
+  x() // you can call the function before declare
+  function x(){
+    console.log("x");
+  }
+  ```
+
+</SubHeading>
+
+<SubHeading id="var-hoisting" title="var hoisting">
+  With var, you can reference the variables before declared but the value of that variable will be undefined.
+  ```js {1}
+  console.log(x, func, func1); // undefined, undefined, undefined
+  var x = 5;
+  var func = () => {console.log("func");}
+  var func1 = function(){
+    console.log("func1");
+  }
+  ```
+</SubHeading>
+
+<SubHeading id="const-hoisting" title="const/let hoisting">
+  With const/let, you can't reference the variables before declared. It will throw ReferenceError.
+  ```js {1} /ReferenceError/#error
+  console.log(x, y, func) // ReferenceError
+  const x = 5;
+  let y = 5;
+  const func = () => {console.log("func");}
+  ```
+  <br/>
+  Huh ReferenceError, Weird!! Does that means const and let does not hoisted at all? Let's understand with example
+  ```js /ReferenceError/#error
+  const a = 5;
+  {
+    console.log(a); // ReferenceError
+    const a = 6;
+  }
+  ```
+  If the const a = 6 declaration were not hoisted at all, then in the above example, the console should be logging 5, reading the value of the variable from the global scope.
+  However, inside the block, the declaration of variables causes a behavioral change in scope. The console reads the value of x from the const a = 6; block declaration, which means the variable x got hoisted.
+  Why, then, does it still give a ReferenceError?
+
+  <SubHeading id="temporal-dead-zone" title="Temporal Dead Zone(TDZ)">
+    A variable declared with let or const is in the Temporal Dead Zone from the start of the block until code execution reaches the place where the variable is declared and initialized.
+    While inside the TDZ, variables are not initialized with any value, and any attempt to access them will result in a ReferenceError.
+    <br/>
+    In simpler terms, const and let variables are hoisted, but unlike var, they will be uninitialized. Hence, if you reference variables before they're declared, it will result in a ReferenceError.
+
+    ```js {3-5} caption="A highlighted block is refer to TDZ for the age variable"
+    const name = "John";
+    if(name) {
+      console.log(`${name} is ${age} years old`);
+      const birthYear = 1998;
+      console.log(birthYear)
+      const age = 2024 - birthYear;
+    }
+    ```
+  </SubHeading>
+</SubHeading>
+
+<Image variant='fill' src='/_assets/javascript/002-01.png' alt="Hoisitng Chart" caption={'[Fig 2.1] Hoisting'}/>
+
+
+
