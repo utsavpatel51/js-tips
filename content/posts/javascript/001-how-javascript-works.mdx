@@ -5,22 +5,20 @@ category: JavaScript
 tags: [JavaScript]
 date: 27 February 2024
 lastUpdated: 27 February 2024
-description: How does your JS code compile into machine code? Let's dive a little deeper to learn more about how JavaScript works.
+description: How does your JavaScript code compile into machine code? Let's dive a little deeper to learn more about how JavaScript works.
 ---
 
-When you run your JS code, somehow it compile and got execute in your browser or server. How does your JS code compile into machine code? Let's dive a little deeper to learn more about how JavaScript works.
+When you run your JavaScript code, it compiles and gets executed in your browser or server. How does your JavaScript code compile into machine code? Let's dive a little deeper to learn more about how JavaScript works.
 
 <Heading id="js-engine" title="What is JS Engine?">
-A JS Engine is a piece of program which execute your JS code. So that means JS can execute not only on
-browser but also on any piece of device which have JS Engine. Every browser have their own version of JS Engine. For Example...
+  A JS Engine is a piece of program that executes your JS code. So that means JS can execute not only on
+  a browser but also on any piece of device which has a JS Engine. Every browser has its own version of a JS Engine. For Example...
 - V8 in Chrome, Opera, Edge and even Node
 - Chakra in IE
 - Spider Monkey in FireFox
 
 <Callout>
-  Earlier JS was only limited to run on browser as a client slide language only.
-  With Node JS, JS can also be used on server and to execute JS Node JS use V8
-  engine. In simple terms
+  Earlier, JS was only limited to running on browsers as a client-side language only. With Node.js, JS can also be used on the server, and to execute JS, Node.js uses the V8 engine. In simple terms,
   <br />
   <Code>Node JS = V8Engine + Node API/Modules</Code>
 </Callout>
@@ -34,12 +32,10 @@ browser but also on any piece of device which have JS Engine. Every browser have
       Any JS Engine contain two main components
       <ul>
         <li>
-          Call Stack: A call stack is where your code get executed inside
-          Execution Context.
+          Call Stack: A call stack is where your code gets executed inside the Execution Context.
         </li>
         <li>
-          Heap: A heap is unstructured memory pool, which stores all the objects
-          that your application needed.
+          Heap: A heap is an unstructured memory pool, which stores all the objects that your application needs.
         </li>
       </ul>
     </section>
@@ -48,29 +44,29 @@ browser but also on any piece of device which have JS Engine. Every browser have
 />
 
 <SubHeading id="call-stack-and-execution-context" title="Call stack & Execution Context">
-An Execution context(EC) is where your JS code will get executed so all the necessary information about your code being run will be stored inside EC. Each EC have two phases
+  An Execution context (EC) is where your JS code will get executed, so all the necessary information about your code being run will be stored inside the EC. Each EC has two phases.
 - Creation Phase
 - Execution Phase
 
 <SubHeading id="creation-phase" title="The Creation Phase">
-When the JS Engine execute your JS Code for the first time, before even executing you code it will create the <Code>Global Execution Context</Code> which is default EC and contain top-level code.
-During this Phase JS Engine will do following tasks
-- Create a <Code>global</Code> object, window object in browser & global object in Node.
-- Bind <Code>this</Code> to global object
-- Creation of Scope Chain
+When the JS Engine executes your JS Code for the first time, before even executing your code, it will create the <Code>Global Execution Context</Code> which is default EC and contain top-level code.
+During this Phase JS Engine will do following tasks:
+- Create a <Code>global</Code> object: window object in browser & global object in Node.
+- Bind <Code>this</Code> to global object.
+- Creation of Scope Chain.
 - Store function declaration in memory and initialize the variables with undefined inside GEC.
 
-So each Execution Context store
-
+So each Execution Context store:
 - A Variable Environment
-  - let, const, var declaration
-  - function and arguments
-- A Scope Chain
-- this keyword
+  - let, const, var declaration.
+  - function and arguments.
+- A Scope Chain.
+- this keyword.
 </SubHeading>
 
 <SubHeading id="execution-phase" title="The Execution Phase">
-During execution phase Engine will run JS code line by line and assign value to variables and executes the functions. For each function call, JS Engine will create new context push it into stack, known as call stack, for it knows as <Code>Function Execution Context</Code>. Unlike Global, Function EC represent the function local scope so it will only have local variables.
+  During the execution phase, the Engine will run JS code line by line, assign values to variables, and execute functions.
+  For each function call, the JS Engine will create a new context, known as the <Code>Function Execution Context</Code>, and push it into the call stack. Unlike the Global EC, the Function EC represents the function's local scope, so it will only have local variables.
 
 </SubHeading>
 </SubHeading>
@@ -85,17 +81,16 @@ During execution phase Engine will run JS code line by line and assign value to 
   alt='V8 Engine'
   content={
     <p>
-      The JS file enters the engine and the <Code>parser</Code> parses the file,
-      does lexical analysis break the code into a token which will be used in
-      the creation of an <Code>Abstract syntax tree</Code> (AST).
+
+      The JS file enters the engine and the <Code>parser</Code> parses the file, performing lexical analysis to
+      break the code into tokens, which will be used in the creation of an <Code>Abstract Syntax Tree (AST)</Code>.
       <br />
       <br />
-      Now generated AST will be passed down to <Code>interpreter</Code> which generate
-      the un-optimized code and execution can start with no delay. profiler will
-      watch the code as it runs and identifies the area where it require the optimization.
-      profiler will pass that code to <Code>complier</Code> that perform optimization
-      and generate optimized code that can replace its counterpart in non-optimized
-      code generated by the interpreter.
+      Now, the generated AST is passed down to the <Code>interpreter</Code>, which
+      generates the unoptimized code, allowing execution to start with no delay. The <Code>profiler</Code>
+      watches the code as it runs and identifies areas where optimization is needed.
+      The profiler then passes that code to the <Code>compiler</Code> which performs optimization and
+      generates optimized code that can replace its counterpart in the non-optimized code generated by the interpreter.
       <br />
       <br />
       As the profiler and compiler constantly make changes to the bytecode, the
@@ -106,12 +101,12 @@ During execution phase Engine will run JS code line by line and assign value to 
 />
 
 <Callout>
-In V8 Engine, JS is interpreted by an interpreter called <Code>Ignition</Code> as well as compiled by a JIT-optimized complier called <Code>TurboFan</Code>
+In V8 Engine, JS is interpreted by an interpreter called <Code>Ignition</Code> as well as compiled by a JIT-optimized compiler called <Code>TurboFan</Code>
 </Callout>
 </Heading>
 
 <Heading id="js-runtime" title="What is JS Runtime?">
-JS Engine run inside environment, which provide additional features to the scripts which we can use at the runtime.
+  JS Engine runs inside an environment, which provides additional features to the scripts that we can use at runtime.
 
 <Image
   variant='half'
@@ -120,21 +115,16 @@ JS Engine run inside environment, which provide additional features to the scrip
   content={
     <ol>
       <li>
-        JS scripts get access to WEB API which is not part of native JS for
-        example DOM, AJAX, setTimeout etc.
+        JS scripts get access to Web APIs, which are not part of native JS. For example, DOM manipulation, AJAX requests, setTimeout, etc.
       </li>
       <li>
-        JS runtime also includes Event loop and Callback queue.
+        JS runtime also includes the Event loop and Callback queue.
         <ul>
           <li>
-            When scripts start running, first all the sync code execution. All
-            the callback associated with some event that callback function will
-            be queued in the callback queue.
+            When scripts start running, first all the synchronous code executes. All the callbacks associated with some event are queued in the callback queue.
           </li>
           <li>
-            Now job of event loop is to the take the callback function which is
-            ready to execute and if call stack is empty put the callbacks into
-            the call stack for execution.
+            Now, the job of the event loop is to take the callback function that is ready to execute and, if the call stack is empty, put the callbacks into the call stack for execution.
           </li>
         </ul>
       </li>
@@ -144,16 +134,15 @@ JS Engine run inside environment, which provide additional features to the scrip
 />
 
 <SubHeading id="example" title="Example">
-Let's understand the working of JS Runtime via example.
+Let's understand the working of JS Runtime via example:
 
 <Image variant='fill' src='/_assets/javascript/001-04.gif' alt="JS Runtime Example GIF" caption={<>[Fig 1.4] JS Runtime Visualize via <Link href="http://latentflip.com/loupe/?code=Cgpjb25zb2xlLmxvZygiRmlyc3QgLT4gU3RhcnQiKQpmdW5jdGlvbiBydW4oKSB7CiAgICBzZXRUaW1lb3V0KGZ1bmN0aW9uICgpewogICAgICAgIGNvbnNvbGUubG9nKCJUaGlyZCIpCiAgICB9LCAwKQogICAgY29uc29sZS5sb2coIlNlY29uZCIpCn0KcnVuKCkKY29uc29sZS5sb2coIkZvdXJ0aCAtPiBFbmQiKQ%3D%3D!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D">loupe</Link></>}/>
 
 1. Once the code starts executing, first the console.log() function will be pushed onto the call stack. Once it's executed, it will be popped out of the stack.
-2. Next, the run() function will be pushed onto the stack and execution will start. setTimeout(), provided by the WebAPI, delays tasks without blocking the main thread. So, the callback function passed to setTimeout will be handled by the WebAPI, and the timer will start running while the main thread continues executing and moves to the next console.log() for execution.
+2. Next, the run() function will be pushed onto the stack, and execution will start. setTimeout(), provided by the WebAPI, delays tasks without blocking the main thread. So, the callback function passed to setTimeout will be handled by the WebAPI, and the timer will start running while the main thread continues executing and moves to the next console.log() for execution.
     - In the example, the time being 0 doesn't mean it will be executed or added to the call stack after that time. What it means is that after x time, it will be added to the queue for further execution.
 3. The run() function will be popped out of the stack, and the last console.log() will be pushed onto the stack for execution.
 4. Now, your synchronous code execution is done, but what about the setTimeout callback? How will it get executed? That's where the event loop comes into the picture. The job of the event loop is to continue monitoring the call stack. Once it's empty, it takes tasks from the queue and puts them back into the call stack for execution.
     - So, once the last console.log() execution is done and the call stack is empty, the event loop will take the callback from the queue and put it back into the call stack for execution.
-
 </SubHeading>
 </Heading>

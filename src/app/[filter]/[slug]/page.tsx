@@ -21,7 +21,7 @@ export default function BlogPage({ params }: Props) {
         <h1 className='text-3xl'>{blog.title}</h1>
         <p className='text-muted-foreground'>{blog.date}</p>
       </div>
-      <div className='text-justify leading-7 mb-4'>
+      <div className='leading-7 mb-4'>
         <MDXContent code={blog.content} />
       </div>
       <PageFooter lastUpdated={blog.lastUpdated} />

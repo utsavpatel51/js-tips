@@ -26,7 +26,7 @@ export default function HomePage(props: Props) {
 
   return (
     <div className='flex flex-col space-y-2'>
-      <div className='w-full pt-8 pb-4'>
+      <div className='w-full pt-8 pb-4 text-justify'>
         <p>
           Welcome to JS Tips, your go-to spot for all things related to
           <span className='text-primary'> JavaScript!</span> As a frontend

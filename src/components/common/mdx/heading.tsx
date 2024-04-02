@@ -33,7 +33,7 @@ export function Heading({ children, ...props }: HeadingProps) {
         </NextLink>
         {props.title}
       </h2>
-      <div className='ml-4'>{children}</div>
+      <div className='ml-2 md:ml-4'>{children}</div>
     </section>
   );
 }
@@ -55,7 +55,7 @@ export function SubHeading({ children, ...props }: HeadingProps) {
         </NextLink>
         {props.title}
       </h3>
-      <div className='ml-4'>{children}</div>
+      <div className='ml-2 md:ml-4'>{children}</div>
     </section>
   );
 }

@@ -7,7 +7,8 @@ date: 22 March 2024
 lastUpdated: 22 March 2024
 description: Hoisting refers to process where interpreter move the declaration to the top of the scopes prior to the execution of the code.
 ---
-Hoisting refers to a process where the interpreter moves the declaration of variables, functions, classes, and imports to the top of the scopes,
+Hoisting refers to a process wherein the interpreter moves the declarations of variables, functions, classes, and imports to the top of the scopes,
+prior to the execution of the code or at the creation time of Execution Context. Hoisting allows referencing variables and functions even before their declaration.
 prior to the execution of the code or at the creation time of <Link href="/javascript/001-how-javascript-works/#creation-phase">Execution Context</Link>. Hoisting allows referencing variables and functions even before their declaration.
 <br/>
 For different types of variables or functions, hoisting behavior will be different. There are different types of hoisting behaviors:
@@ -18,7 +19,7 @@ For different types of variables or functions, hoisting behavior will be differe
 Function declarations are hoisted with type 1 behavior, var declarations are hoisted with type 2 behavior, and let, const, class declarations are hoisted with type 3 behavior.
 
 <SubHeading id="function-hoisting" title="Function declaraion hoisting">
-  Function defined via function declaration, you can call the function before the function is declared.
+  Functions defined via function declaration, you can call the functions before the functions is declared.
   ```js {1}
   x() // you can call the function before declare
   function x(){
@@ -29,7 +30,7 @@ Function declarations are hoisted with type 1 behavior, var declarations are hoi
 </SubHeading>
 
 <SubHeading id="var-hoisting" title="var hoisting">
-  With var, you can reference the variables before declared but the value of that variable will be undefined.
+  With var, you can reference the variables before declared but the value of that variables will be undefined.
   ```js {1}
   console.log(x, func, func1); // undefined, undefined, undefined
   var x = 5;
